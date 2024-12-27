@@ -1,21 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 <head>
   <title>KAUNIS VAASA</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> <! -- Source: makasanaphoto / bigstockphoto.com -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-
-
-</style>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
+<div class="header">
   <h1>KAUNIS VAASA</h1>
-  <h2>Näin tämän koodi painamalla F12</h2>
-  <script src="kaunisvaasa.js" defer></script>
+</div>
+
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    
+    <ul>
+      <li><a class="link" href="https://www.vaasa.fi/">Vaasa Kaupunki</a></li>
+      <li><a class="link" href="https://fi.wikipedia.org/wiki/Vaasa">Wiki Tiedot</a></li>
+      <li><a class="link" href="https://vamia.fi/">Ammattikoulu</a></li>
+      <li><a class="link" href="https://www.vamk.fi/">Ammattikorkeakoulu</a></li>
+    </ul>
+  
+  </div>
+
+  <div class="col-6 col-s-9">
+
+    <h1><span class="bit"><b>Valokuva-albumi</b></span></h1>
+	
+	  <img style="width:300px" src = "img_0.jpg" id = "kuva0"/>
+    <br>
+    <button class="button animation" onclick = "omaFunktio();">Seuraava kuva</button>
+    <script src="kaunisvaasa.js" defer></script>
+
+  </div>
+
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>Tämä on vierailusi numero:</h2>
+      <p id="count"></p>
+      <script src="visitors.js" defer></script>
+
+      <h2>Lämpötila Vaasassa:</h2>
+      <p id="temperature"></p>
+      <script src="temperature.js" defer></script>
+
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p><small>JavaScript Loppuprojekti by Ivonne Cuadros Evangelista</small></p>
+</div>
 
 </body>
 </html>
