@@ -1,18 +1,27 @@
 const count = document.getElementById("count");
 
-countingVisitors();
+countingYourVisits();
 
-function countingVisitors(){
-let visits;
+function countingYourVisits(){
+let visitToWebPage;
 
-if(!localStorage.getItem("visits")) localStorage.setItem("visits", 1);
+if(!localStorage.getItem("visitToWebPage")) {
 
+    localStorage.setItem("visitToWebPage", 1);
+}  
 
-visits = +localStorage.getItem("visits");
-const incrementedCount = visits + 1;
+else {
 
-localStorage.setItem("visits", incrementedCount);
+visitToWebPage = +localStorage.getItem("visitToWebPage");
 
-count.innerText = localStorage.getItem("visits");
+const countingVisits = visitToWebPage + 1;
+
+localStorage.setItem("visitToWebPage", countingVisits);
+
+console.log("Tämä on vierailusi numero: " + countingVisits);
+}
+
+count.innerText = localStorage.getItem("visitToWebPage");
+
 }
 

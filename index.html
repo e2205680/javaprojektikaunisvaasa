@@ -32,18 +32,58 @@
 	  <img style="width:300px" src = "img_0.jpg" id = "kuva0"/>
     <br>
     <button class="button animation" onclick = "omaFunktio();">Seuraava kuva</button>
+    <br>
+    
     <script src="kaunisvaasa.js" defer></script>
 
+    <!-- New Addition for slotmachine -->
+
+    <h1><span class="bit"><b>Pelikone</b></span></h1>
+    <div id="tirar">Tirar</div>
+
+    <section id="ventanas">
+
+      <div class="ventana">
+        <div class="imagen">
+          <img class="myImg"  src="img_0.jpg">
+        </div>
+      </div>
+
+      <div class="ventana">
+        <div class="imagen">
+          <img class="myImg" src="img_0.jpg">
+        </div>
+      </div>
+
+      <div class="ventana">
+        <div class="imagen">
+          <img class="myImg" src="img_0.jpg">
+        </div>
+      </div> 
+
+    </section>
+
+    <div id="cuadro_mensaje">
+      <div id="mensaje">Espero que ganes</div>
+    </div>
+
+    <audio id="sonido" src=""></audio>
+
+    <script src="pelikone.js" defer></script>
+
+    <!-- END of New Addition for slotmachine -->
   </div>
 
   <div class="col-3 col-s-12">
     <div class="aside">
       <h2>Tämä on vierailusi numero:</h2>
-      <p id="count"></p>
+      <h3 id="count"></h3>
       <script src="visitors.js" defer></script>
 
-      <h2>Lämpötila Vaasassa:</h2>
-      <p id="temperature"></p>
+      <h2>Sää Vaasassa:</h2>
+      <h3 id="temperature"></h3>
+      <h3 id="temperature_feels_like"></h3>
+      <h3 id="wind_speed"></h3>
       <script src="temperature.js" defer></script>
 
     </div>

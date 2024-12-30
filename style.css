@@ -1,8 +1,69 @@
+ /* New Addition for slotmachine */
+ 
+ .myImg{
+  max-width:100%;
+  vertical-align:top;
+ }
+ 
+ .imagen {
+  border:4px solid #7733b6;
+  border-radius:10px;
+  padding:15px;
+}
+
+#tirar{
+  width:100px;
+  height:100px;
+  background-color:beige;
+  border-radius:50%;
+  border:4px solid #0b75ee;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:2em;
+  user-select:none;
+  -moz-user-select:none;
+  cursor:pointer;
+  right:0;
+  left:0;
+  margin:auto;
+  top:30px;
+}
+
+#tirar:hover{
+  background-color:lightgreen;
+}
+
+#ventanas{
+  display:flex;
+  justify-content:space-around;
+}
+
+.ventana{
+  width:175px;
+}
+
+#cuadro_mensaje{
+  border:4px solid #0b75ee;
+  justify-content:space-around;
+  border-radius:10px;
+  background-color:lightgreen;
+}
+
+#mensaje{
+  font: size 1.6em;
+  color:#580be6;
+  text-align:center;
+}
+
+  /* END of New Addition for slotmachine */
+
 .button {
   background-color: #56a2e9;
   text-align: center;
   font-size: 24px;
   border-radius: 30px;
+  cursor:pointer;
 }
 
 .bit{
