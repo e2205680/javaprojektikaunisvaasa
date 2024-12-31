@@ -28,10 +28,23 @@
   <div class="col-6 col-s-9">
 
     <h1><span class="bit"><b>Valokuva-albumi</b></span></h1>
-	
-	  <img style="width:300px" src = "img_0.jpg" id = "kuva0"/>
+	  
+    <!-- Adding a border to the Album picture -->
+    
+    <div class="borde">
+      <img class="myImg"  src="img_0.jpg" id = "kuva0"/>
+    </div>
+
+    <!-- END of Adding a border to the Album picture -->
+
     <br>
-    <button class="button animation" onclick = "omaFunktio();">Seuraava kuva</button>
+    <!-- 
+    <button class="button button2 animation" onclick = "nappiEdellinenKuva();">Edellinen Kuva</button>    Adding second button 
+    <button class="button button1 animation" onclick = "nappiSeuravaaKuva();">Seuraava Kuva</button>     Adding class: button1 -->  
+  
+    <button class="button button2 animation" id="buttonEdellinen">Edellinen Kuva</button>   <!-- Adding second button -->
+    <button class="button button1 animation" id="buttonSeurava">Seuraava Kuva</button>    <!-- Adding class: button1 -->
+
     <br>
     
     <script src="kaunisvaasa.js" defer></script>
@@ -82,6 +95,7 @@
       <h3 id="temperature"></h3>
       <h3 id="temperature_feels_like"></h3>
       <h3 id="wind_speed"></h3>
+      <h3 id="weather_description"></h3>       <!-- Adding weather_description item -->
       <script src="temperature.js" defer></script>
 
     </div>
@@ -89,7 +103,7 @@
 </div>
 
 <div class="footer">
-  <p><small>JavaScript Loppuprojekti by Ivonne Cuadros Evangelista</small></p>
+  <p><small>JavaScript Loppuprojekti by Ivonne Cuadros Evangelista 2024</small></p>
 </div>
 
 </body>

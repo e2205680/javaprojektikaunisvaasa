@@ -1,15 +1,29 @@
+/* Adding a border to the Album picture */
+
+.borde {
+  display:flex;
+  justify-content:space-around; 
+  height: 300px;
+  border:4px solid #7733b6;
+  border-radius:10px;
+  padding:10px;
+}
+
+/* END of Adding a border to the Album picture */
+ 
  /* New Addition for slotmachine */
  
- .myImg{
+ .myImg{  /* For all pictures */
   max-width:100%;
   vertical-align:top;
  }
  
- .imagen {
+ .imagen { /* Border around each Pelikone picture */
+ 
   border:4px solid #7733b6;
   border-radius:10px;
-  padding:15px;
-}
+  padding:10px;
+  }
 
 #tirar{
   width:100px;
@@ -37,21 +51,25 @@
 #ventanas{
   display:flex;
   justify-content:space-around;
-}
+  }
 
 .ventana{
-  width:175px;
+  width:150px;
 }
 
 #cuadro_mensaje{
   border:4px solid #0b75ee;
-  justify-content:space-around;
+  justify-content:center;
+  align-items:center;
+  height:50px;
   border-radius:10px;
   background-color:lightgreen;
+  margin:auto;
+  top:30px;
 }
 
 #mensaje{
-  font: size 1.6em;
+  font: size 2em;
   color:#580be6;
   text-align:center;
 }
@@ -59,11 +77,41 @@
   /* END of New Addition for slotmachine */
 
 .button {
-  background-color: #56a2e9;
+  /*background-color: #56a2e9; */
+  display: inline-block;
   text-align: center;
   font-size: 24px;
   border-radius: 30px;
   cursor:pointer;
+}
+
+.button1 {  /* nappiSeuravaaKuva */
+  background-color: lightblue;
+ }
+
+ .button2 { /* nappiEdellinenKuva */
+  background-color: pink;
+ }
+
+ .button1:hover { /* nappiSeuravaaKuva */ 
+  background-color: rgb(95, 92, 243);
+}
+
+.button2:hover {  /* nappiEdellinenKuva */
+  background-color: fuchsia;
+}
+
+@keyframes example {
+  20%  {background-color: #c83be1;}
+  30%  {background-color: #3261ec;}
+  50%  {background-color: #e289f1;}
+  100% {background-color: #3ce2ee;}
+}
+
+.animation {
+  /*background-color: #81ccec; */
+  animation-name: example;
+  animation-duration: 3s;
 }
 
 .bit{
@@ -72,22 +120,6 @@
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;  
-}
-
-
-.animation {
-  /* width: 100px;
-  height: 100px; */
-  background-color: #f791e6;
-  animation-name: example;
-  animation-duration: 10s;
-}
-
-@keyframes example {
-  0%   {background-color: #580be6;}
-  25%  {background-color: #e2449b;}
-  50%  {background-color: #e952c1;}
-  100% {background-color: #81ccec;}
 }
 
 .link {
