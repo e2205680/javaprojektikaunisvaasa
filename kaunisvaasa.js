@@ -7,7 +7,7 @@ let pic = document.getElementById("kuva0");
 
 let kuvat = [];
 for (let index = 0; index <21; index++) {
-    //kuvat[index] = "img_"+index+".jpg";
+    
     kuvat.push("img_"+index+".jpg");
 }
 
@@ -15,10 +15,19 @@ console.log("Array of kuvat names:");
 console.log(kuvat);
 
 let kuvatLength = kuvat.length;
-let numero = 1;
+let numero = 0; 
 
 buttonEdellinen.addEventListener("click", nappiEdellinenKuva);
 buttonSeurava.addEventListener("click", nappiSeuravaaKuva);
+
+// Aktivoi audioGAmeLevel
+
+buttonEdellinen.addEventListener("click", playGameLevel);
+buttonSeurava.addEventListener("click", playGameLevel);
+
+// END of Aktivoi audioGAmeLevel
+
+// Adding katsoKuva function
 
 function katsoKuva(){
     
@@ -26,33 +35,37 @@ function katsoKuva(){
 
     pic.src = kuvat[numero];
 }
+// END of Adding KatsoKuva function
 
 function nappiSeuravaaKuva() {
 
-    katsoKuva();
-    
     numero = numero +  1;
-
-    if(numero == kuvatLength) {
+  
+    if(numero >= kuvatLength) {
         numero = 0;  
     }
+
+    katsoKuva();
 }
 
-// Adding second button Edellinen
+// Adding second button Edellinen function
 
 function nappiEdellinenKuva() {
     
     numero = numero - 1;
 
-    katsoKuva();
-
-    if(numero <= 0) {
-        numero = kuvatLength;  
+    if(numero < 0) {
+        numero = kuvatLength - 1;  
     }
     
+    katsoKuva();
     
-// END of Adding second button
+// END of Adding second button Edellinen function
+}
 
+function playGameLevel(){
+    let audioGameLevel = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
+    audioGameLevel.play();   
 }
 
 

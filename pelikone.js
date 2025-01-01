@@ -2,6 +2,13 @@ window.onload = aloittaa;
 
 // Käyttämällä kuvat array - from kaunisvaasa.js tiedosto
 
+const buttonLevelEasy = document.getElementById("easy");
+const buttonLevelMedium = document.getElementById("medium");
+const buttonLevelHard = document.getElementById("hard");
+
+const ikkunaLaskuri = document.getElementsByClassName("ikkuna");
+const imagenLaskuri = document.getElementsByClassName("imagen");
+
 // viesti jokaiselle kuvalle - yhteensä 21 viestiä
 let palkinnot =[
     "Unelmat eivät ole liian suuria, ne vain odottavat, että rohkeutesi kasvaa tarpeeksi tavoittaaksesi ne",
@@ -32,9 +39,14 @@ let paikka=[];
 
 function aloittaa(){
 
-    document.getElementById("easy").addEventListener("click", painaNappi); 
-    document.getElementById("medium").addEventListener("click", painaNappi);
-    document.getElementById("hard").addEventListener("click", painaNappi);   
+    buttonLevelEasy.addEventListener("click", painaNappi); 
+    buttonLevelMedium.addEventListener("click", painaNappi);
+    buttonLevelHard.addEventListener("click", painaNappi);   
+
+    // Aktivoi audioGAmeLevel
+    buttonLevelEasy.addEventListener("click", playGameLevel);
+    buttonLevelMedium.addEventListener("click", playGameLevel);
+    buttonLevelHard.addEventListener("click", playGameLevel);
     
 }
 
@@ -42,12 +54,12 @@ function painaNappi(){
 
     paikka=[];
 
-    let maximo = document.getElementsByClassName("ikkuna").length;
+    let luku = ikkunaLaskuri.length;
 
-    for (let k=0;k<maximo;k++){
+    for (let arvo=0; arvo<luku; arvo++){
 
         paikka.push(valitseKuva());
-        näytäKuva(k,paikka[k]);
+        laittaaKuva(arvo,paikka[arvo]);
     }
     console.log(paikka);
 
@@ -56,34 +68,33 @@ function painaNappi(){
 
 // Adding code for the 3 buttons of gameLevel
 
-    let multiplier;
+    let kerroin;
 
-    document.getElementById("easy").addEventListener("click", () => {
-        multiplier = 3; 
-        console.log("multiplier: "+multiplier);
+    buttonLevelEasy.addEventListener("click", () => {
+        kerroin = 3; 
+        console.log("kerroin: "+kerroin);
     }); 
-    document.getElementById("medium").addEventListener("click", () => {
-        multiplier = 10; 
-        console.log("multiplier: "+multiplier);
+    buttonLevelMedium.addEventListener("click", () => {
+        kerroin = 10; 
+        console.log("kerroin: "+kerroin);
     });
-    document.getElementById("hard").addEventListener("click", () => {
-        multiplier = kuvat.length; 
-        console.log("multiplier: "+multiplier);
+    buttonLevelHard.addEventListener("click", () => {
+        kerroin = kuvat.length; 
+        console.log("kerroin: "+kerroin);
     }); 
 
-    document.getElementsByClassName("gameLevel").addEventListener("click", playGameLevel())
-
+    
 // END of Adding code for the 3 buttons of gameLevel
 
 function valitseKuva(){
 
-    let kuvaIndex=Math.floor(Math.random() * multiplier);  
-    return kuvaIndex;
+    let kuvaNumero=Math.floor(Math.random() * kerroin);  
+    return kuvaNumero;
 }
 
-function näytäKuva(num,im){
+function laittaaKuva(vuoro,indexLuku){
 
-    document.getElementsByClassName("imagen")[num].getElementsByTagName("img")[0].src=kuvat[im]; 
+    imagenLaskuri[vuoro].getElementsByTagName("img")[0].src=kuvat[indexLuku]; 
 }
 
 function vertailla(){
@@ -99,7 +110,6 @@ function vertailla(){
    }
 }
 
-
 function soundVoittaja(){
     let audioVoittaja = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3");
     audioVoittaja.play();     
@@ -107,5 +117,5 @@ function soundVoittaja(){
 
 function playGameLevel(){
     let audioGameLevel = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
-    audioGameLevel.playGameLevel();   
+    audioGameLevel.play();   
 }
