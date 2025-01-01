@@ -32,7 +32,9 @@ let paikka=[];
 
 function aloittaa(){
 
-    document.getElementById("paina").onclick = painaNappi;
+    document.getElementById("easy").addEventListener("click", painaNappi); 
+    document.getElementById("medium").addEventListener("click", painaNappi);
+    document.getElementById("hard").addEventListener("click", painaNappi);   
     
 }
 
@@ -53,7 +55,8 @@ function painaNappi(){
 }
 
 // Adding code for the 3 buttons of gameLevel
-let multiplier;
+
+    let multiplier;
 
     document.getElementById("easy").addEventListener("click", () => {
         multiplier = 3; 
@@ -68,13 +71,14 @@ let multiplier;
         console.log("multiplier: "+multiplier);
     }); 
 
+    document.getElementsByClassName("gameLevel").addEventListener("click", playGameLevel())
+
 // END of Adding code for the 3 buttons of gameLevel
 
 function valitseKuva(){
 
     let kuvaIndex=Math.floor(Math.random() * multiplier);  
     return kuvaIndex;
-    
 }
 
 function näytäKuva(num,im){
@@ -91,13 +95,17 @@ function vertailla(){
         mensaje.innerText = palkinnot[paikka[0]];
         console.log("Voittoviesti: "+paikka[0]);
 
-        play();  // Aktivoi voittava ääni
+        soundVoittaja();  // Aktivoi audioVoittaja
    }
 }
 
 
-function play(){
+function soundVoittaja(){
+    let audioVoittaja = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3");
+    audioVoittaja.play();     
+}
 
-    let audio = new Audio("http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3");
-    audio.play();      
+function playGameLevel(){
+    let audioGameLevel = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
+    audioGameLevel.playGameLevel();   
 }
