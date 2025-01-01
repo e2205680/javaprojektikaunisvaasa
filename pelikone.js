@@ -43,7 +43,7 @@ function aloittaa(){
     buttonLevelMedium.addEventListener("click", painaNappi);
     buttonLevelHard.addEventListener("click", painaNappi);   
 
-    // Aktivoi audioGAmeLevel
+    // Aktivoi painaNappiSound function
     buttonLevelEasy.addEventListener("click", painaNappiSound);
     buttonLevelMedium.addEventListener("click", painaNappiSound);
     buttonLevelHard.addEventListener("click", painaNappiSound);
@@ -106,18 +106,6 @@ function vertailla(){
         mensaje.innerText = palkinnot[paikka[0]];
         console.log("Voittoviesti: "+paikka[0]);
 
-        soundVoittaja();  // Aktivoi audioVoittaja
+        soundVoittaja();  // Aktivoi soundVoittaja function
    }
 }
-
-/*
-function soundVoittaja(){
-    let audioVoittaja = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3");
-    audioVoittaja.play();     
-}
-
-function playGameLevel(){
-    let audioGameLevel = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
-    audioGameLevel.play();   
-}
-    */

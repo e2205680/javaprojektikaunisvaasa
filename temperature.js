@@ -28,10 +28,8 @@ async function apiTemperature() {
         console.log("Temperature feels like: " + data.feelslike_c + "°C");
         console.log("Wind speed: " + data.windspd_ms + " m/s");
         console.log("SÄÄ: " + data.wx_desc);    // Adding weather_description item
-        
        }
     
-      
     catch(error){
         console.error(error);
     }  

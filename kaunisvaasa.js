@@ -20,19 +20,18 @@ let numero = 0;
 buttonEdellinen.addEventListener("click", nappiEdellinenKuva);
 buttonSeurava.addEventListener("click", nappiSeuravaaKuva);
 
-// Aktivoi audioGAmeLevel
+// Aktivoi muutaKuvaSound
 
 buttonEdellinen.addEventListener("click", muutaKuvaSound);
 buttonSeurava.addEventListener("click", muutaKuvaSound);
 
-// END of Aktivoi audioGAmeLevel
+// END of Aktivoi muutaKuvaSound
 
 // Adding katsoKuva function
 
 function katsoKuva(){
     
     console.log(kuvat[numero]);
-
     pic.src = kuvat[numero];
 }
 // END of Adding KatsoKuva function
@@ -44,7 +43,6 @@ function nappiSeuravaaKuva() {
     if(numero >= kuvatLength) {
         numero = 0;  
     }
-
     katsoKuva();
 }
 
@@ -56,8 +54,7 @@ function nappiEdellinenKuva() {
 
     if(numero < 0) {
         numero = kuvatLength - 1;  
-    }
-    
+    }    
     katsoKuva();
     
 // END of Adding second button Edellinen function
