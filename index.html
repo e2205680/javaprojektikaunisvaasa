@@ -27,21 +27,18 @@
 
   <div class="col-6 col-s-9">
 
-    <h1><span class="bit"><b>Valokuva-albumi</b></span></h1>
+    <h1><span class="bit"><b>Valokuva-Albumi</b></span></h1>
 	  
     <!-- Adding a border to the Album picture -->
     
-    <div class="borde">
+    <div class="border">
       <img class="myImg"  src="img_0.jpg" id = "kuva0"/>
     </div>
 
     <!-- END of Adding a border to the Album picture -->
 
     <br>
-    <!-- 
-    <button class="button button2 animation" onclick = "nappiEdellinenKuva();">Edellinen Kuva</button>    Adding second button 
-    <button class="button button1 animation" onclick = "nappiSeuravaaKuva();">Seuraava Kuva</button>     Adding class: button1 -->  
-  
+    
     <button class="button button2 animation" id="buttonEdellinen">Edellinen Kuva</button>   <!-- Adding second button -->
     <button class="button button1 animation" id="buttonSeurava">Seuraava Kuva</button>    <!-- Adding class: button1 -->
 
@@ -52,23 +49,32 @@
     <!-- New Addition for slotmachine -->
 
     <h1><span class="bit"><b>Pelikone</b></span></h1>
-    <div id="tirar">Tirar</div>
 
-    <section id="ventanas">
+    <!--Second Addition for slotmachine: Level buttons -->
+    <h3><b>Valitse vaikeustaso</b></h3>
 
-      <div class="ventana">
+    <button class="gameLevel" id="easy">1</button>
+    <button class="gameLevel" id="medium">2</button>
+    <button class="gameLevel" id="hard">3</button>
+    <!--END of Second Addition for slotmachine: Level buttons -->
+
+    <div id="paina">Paina</div>
+
+    <section id="ikkunat">
+
+      <div class="ikkuna">
         <div class="imagen">
           <img class="myImg"  src="img_0.jpg">
         </div>
       </div>
 
-      <div class="ventana">
+      <div class="ikkuna">
         <div class="imagen">
           <img class="myImg" src="img_0.jpg">
         </div>
       </div>
 
-      <div class="ventana">
+      <div class="ikkuna">
         <div class="imagen">
           <img class="myImg" src="img_0.jpg">
         </div>
@@ -76,8 +82,8 @@
 
     </section>
 
-    <div id="cuadro_mensaje">
-      <div id="mensaje">Espero que ganes</div>
+    <div id="viestilaatikko">
+      <div id="mensaje">Paina nappia, jos kuvat täsmäävät, saat viestin</div>
     </div>
 
     <script src="pelikone.js" defer></script>
