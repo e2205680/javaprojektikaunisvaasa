@@ -44,9 +44,9 @@ function aloittaa(){
     buttonLevelHard.addEventListener("click", painaNappi);   
 
     // Aktivoi audioGAmeLevel
-    buttonLevelEasy.addEventListener("click", playGameLevel);
-    buttonLevelMedium.addEventListener("click", playGameLevel);
-    buttonLevelHard.addEventListener("click", playGameLevel);
+    buttonLevelEasy.addEventListener("click", painaNappiSound);
+    buttonLevelMedium.addEventListener("click", painaNappiSound);
+    buttonLevelHard.addEventListener("click", painaNappiSound);
     
 }
 
@@ -110,6 +110,7 @@ function vertailla(){
    }
 }
 
+/*
 function soundVoittaja(){
     let audioVoittaja = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3");
     audioVoittaja.play();     
@@ -119,3 +120,4 @@ function playGameLevel(){
     let audioGameLevel = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
     audioGameLevel.play();   
 }
+    */

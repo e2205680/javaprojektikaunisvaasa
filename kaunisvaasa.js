@@ -22,8 +22,8 @@ buttonSeurava.addEventListener("click", nappiSeuravaaKuva);
 
 // Aktivoi audioGAmeLevel
 
-buttonEdellinen.addEventListener("click", playGameLevel);
-buttonSeurava.addEventListener("click", playGameLevel);
+buttonEdellinen.addEventListener("click", muutaKuvaSound);
+buttonSeurava.addEventListener("click", muutaKuvaSound);
 
 // END of Aktivoi audioGAmeLevel
 
@@ -62,10 +62,3 @@ function nappiEdellinenKuva() {
     
 // END of Adding second button Edellinen function
 }
-
-function playGameLevel(){
-    let audioGameLevel = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
-    audioGameLevel.play();   
-}
-
-

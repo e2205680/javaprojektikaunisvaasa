@@ -5,7 +5,12 @@ function soundVoittaja(){
     audioVoittaja.play();     
 }
 
-function playGameLevel(){
-    let audioGameLevel = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
-    audioGameLevel.play();   
+function painaNappiSound(){
+    let audioNappiSound = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
+    audioNappiSound.play();   
+}
+
+function muutaKuvaSound(){
+    let audioMuutaKuvaSound = new Audio("https://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/missile.mp3");
+    audioMuutaKuvaSound.play();   
 }
