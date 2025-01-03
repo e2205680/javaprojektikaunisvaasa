@@ -3,25 +3,25 @@ const count = document.getElementById("count");
 countingYourVisits();
 
 function countingYourVisits(){
-let visit_1;
+let visit_2;
 
-if(!localStorage.getItem("visit_1")) {
+if(!localStorage.getItem("visit_2")) {
 
-    localStorage.setItem("visit_1", 1);
+    localStorage.setItem("visit_2", 1);
 }  
 
 else {
 
-visit_1 = +localStorage.getItem("visit_1");
+visit_2 = +localStorage.getItem("visit_2");
 
-const countingVisits = visit_1 + 1;
+const countingVisits = visit_2 + 1;
 
-localStorage.setItem("visit_1", countingVisits);
+localStorage.setItem("visit_2", countingVisits);
 
 console.log("Tämä on vierailusi numero: " + countingVisits);
 }
 
-count.innerText = localStorage.getItem("visit_1");
+count.innerText = localStorage.getItem("visit_2");
 
 }
 

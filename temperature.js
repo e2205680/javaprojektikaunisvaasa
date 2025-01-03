@@ -18,7 +18,7 @@ async function apiTemperature() {
         temperature.innerText = "Lämpötila: " + data.temp_c + "°C";
         temperatureFeelsLike.innerText = "Lämpötilan tunne: " + data.feelslike_c + "°C";
         windSpeed.innerText = "Tuulen nopeus: " + data.windspd_ms + " m/s";
-        weatherDescription.innerText = "SÄÄ: " + data.wx_desc;      // Adding weather_description item
+        weatherDescription.innerText = "Sää: " + data.wx_desc;      // Adding weather_description item
 
         console.log("Data from API:");
         console.log(data);
@@ -27,7 +27,7 @@ async function apiTemperature() {
         console.log("Temperature: " + data.temp_c + "°C");
         console.log("Temperature feels like: " + data.feelslike_c + "°C");
         console.log("Wind speed: " + data.windspd_ms + " m/s");
-        console.log("SÄÄ: " + data.wx_desc);    // Adding weather_description item
+        console.log("Sää: " + data.wx_desc);    // Adding weather_description item
        }
     
     catch(error){
