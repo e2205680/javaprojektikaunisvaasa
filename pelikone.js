@@ -127,14 +127,15 @@ function laittaaKuva(vuoro,indexLuku){
 
     imagenLaskuri[vuoro].getElementsByTagName("img")[0].src=kuvat[indexLuku]; 
 }
-
+// Creating function "vertailla" to ...
 function vertailla(){
-
+   // Using ".getElementById" property to ...
    const mensaje = document.getElementById("mensaje");
-
+   //Condition: If the 3 elements are equals
    if(paikka[0]==paikka[1] && paikka[1]==paikka[2]){
-                
+        // Using ".innerText" property to ...       
         mensaje.innerText = palkinnot[paikka[0]];
+        // Showing winner message in the console
         console.log("Voittoviesti: "+paikka[0]);
 
         // Calling the function "soundVoittaja"
