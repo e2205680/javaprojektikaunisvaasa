@@ -1,3 +1,4 @@
+// Writing comments part 1
 const count = document.getElementById("count");
 
 countingYourVisits();

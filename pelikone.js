@@ -1,3 +1,4 @@
+// Writing comments part 1
 // Using "window.onload" property to ...
 window.onload = aloittaa;
 

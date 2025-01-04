@@ -1,3 +1,5 @@
+// Writing comments part 1
+
 // Using "document.getElementById" property to ...
 
 const temperature = document.getElementById("temperature");

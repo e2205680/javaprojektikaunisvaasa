@@ -1,3 +1,4 @@
+// Writing comments part 1
 /* 
 All function effects are gathered in a .js file
 Using "Audio" property to ...

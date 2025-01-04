@@ -1,3 +1,4 @@
+// Writing comments part 1
 // Showing in the console the title of the proyect 
 console.log("Kaunis Vaasa - Finland"); 
 
