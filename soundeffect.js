@@ -1,4 +1,8 @@
-// window.onload = aloittaa;
+/* 
+All function effects are gathered in a .js file
+Using "Audio" property to ...
+Using "play()" method to ...
+*/
 
 function soundVoittaja(){
     let audioVoittaja = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3");

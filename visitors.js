@@ -3,6 +3,7 @@ const count = document.getElementById("count");
 countingYourVisits();
 
 function countingYourVisits(){
+
 let visit_2;
 
 if(!localStorage.getItem("visit_2")) {

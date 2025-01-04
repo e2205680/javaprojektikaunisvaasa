@@ -26,7 +26,7 @@
   </div>
 
   <div class="col-6 col-s-9">
-
+    
     <h1><span class="bit"><b>VALOKUVA-ALBUMI</b></span></h1>
 	  
     <!-- Adding a border to the Album picture -->
@@ -39,9 +39,10 @@
     <br>
     <br>
     
-    <button class="button button2 animation" id="buttonEdellinen">Edellinen Kuva</button>   <!-- Adding second button -->
-    <button class="button button1 animation" id="buttonSeurava">Seuraava Kuva</button>    <!-- Adding class: button1 -->
-
+    <section id ="ikkunat"> 
+      <button class="button button2 animation" id="buttonEdellinen">Edellinen Kuva</button>   <!-- Adding second button -->
+      <button class="button button1 animation" id="buttonSeurava">Seuraava Kuva</button>    <!-- Adding class: button1 -->
+    </section>
     <br>
     
     <script src="soundeffect.js" defer></script>    <!-- Adding souneffect.js file -->
@@ -55,15 +56,16 @@
     <!--Second Addition for slotmachine: 3 Level buttons -->
     <h3><b>VALITSE VAIKEUSTASO</b></h3>
   
+    <section id ="ikkunat"> 
     <button class="gameLevel" id="easy">1</button>
     <button class="gameLevel" id="medium">2</button>
     <button class="gameLevel" id="hard">3</button>  
+    </section> 
 
-    <br>
     <br>
     <!--END of Second Addition for slotmachine: 3 Level buttons -->
 
-    <section id="ikkunat">
+    <section id="ikkunat"> 
 
       <div class="ikkuna">
         <div class="imagen">
@@ -82,7 +84,7 @@
           <img class="myImg" src="img_0.jpg">
         </div>
       </div> 
-    </section>
+    </section> 
 
     <div id="viestilaatikko">
       <div id="mensaje">Paina nappia, jos kuvat täsmäävät, saat viestin</div>
@@ -91,11 +93,12 @@
     <script src="pelikone.js" defer></script>
 
     <!-- END of New Addition for slotmachine -->
+    
   </div>
 
   <div class="col-3 col-s-12">
     <div class="aside">
-      <h2>Tämä on vierailusi numero:</h2>
+      <h3>Tämä on vierailusi numero:</h3>
       <h3 id="count"></h3>
       <script src="visitors.js" defer></script>
 
@@ -112,7 +115,7 @@
 </div>
 
 <div class="footer">
-  <p><small>JavaScript Loppuprojekti by Ivonne Cuadros Evangelista 2024</small></p>
+  <p><small>JavaScript Loppuprojekti by Ivonne Cuadros Evangelista 2025</small></p>
 </div>
 
 </body>
