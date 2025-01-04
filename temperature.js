@@ -17,7 +17,8 @@ async function apiTemperature() {
     try{
 /* 1.- Using "await" keyword to pause the execution of the asynchronus apiTemperature function.
    2.-Using "fecth" function to make a request to get data from the API webpage     */
-        const response = await fetch("http://api.weatherunlocked.com/api/current/fi.65100?app_id=cb363626&app_key=5a70eb7b532cfced90229538b5e8fe8c");
+        
+       const response = await fetch("http://api.weatherunlocked.com/api/current/fi.65100?app_id=cb363626&app_key=5a70eb7b532cfced90229538b5e8fe8c");
 
 /* 1-. Using ".ok" function to check if the response was successful.
    2-. It can happen that there was no error in the fetching proces, 
@@ -37,9 +38,9 @@ async function apiTemperature() {
         from the API page as a javascript object or array.       */
         const data = await response.json();
 
-    /*  Using the ".innerText" property to update the values 
+   /*  Using the ".innerText" property to update the values 
         of the element "p" texts that has been chosen.
-        This variables are receiving the data parsed by "".json" method      */
+        This variables are receiving the data parsed by "".json" method */     
         temperature.innerText = "Lämpötila: " + data.temp_c + "°C";
         temperatureFeelsLike.innerText = "Lämpötilan tunne: " + data.feelslike_c + "°C";
         windSpeed.innerText = "Tuulen nopeus: " + data.windspd_ms + " m/s";
@@ -49,12 +50,12 @@ async function apiTemperature() {
         console.log("Data from API:");
         console.log(data);
 
-    // Showing in the console the values of the selected data from the API webpage
+   // Showing in the console the values of the selected data from the API webpage
         console.log("Data taken to be shown in the webpage");
         console.log("Temperature: " + data.temp_c + "°C");
         console.log("Temperature feels like: " + data.feelslike_c + "°C");
         console.log("Wind speed: " + data.windspd_ms + " m/s");
-        console.log("Sää: " + data.wx_desc);    // Adding weather_description item
+        console.log("Sää: " + data.wx_desc);    // Adding weather_description item  
        }
 /*  1.-Using "catch(error)" statement to define a block of code to 
        be executed if an error occurs in the try block.
