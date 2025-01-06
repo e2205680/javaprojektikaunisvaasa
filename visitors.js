@@ -49,7 +49,7 @@ the new value of vierailu = 2    */
 localStorage.setItem("vierailu", countingVisits);
 
 // Showing the value of "countingVisits"
-console.log("Tämä on vierailusi numero: " + countingVisits);
+console.log("Tämä on vierailu numero: " + countingVisits);
 }
 
 // Using the ".innerText" property to update the value of the element "count"
