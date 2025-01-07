@@ -14,7 +14,7 @@ const minTemperatureForecast = document.getElementById("minTemperatureForecast")
 const windSpeedForecast = document.getElementById("windSpeedForecast");
 
 /* The fuction apiTemperature is created to get weather values from this API page: 
-   https://developer.weatherunlocked.com/documentation/localweather/current  */
+   https://www.meteosource.com/documentation  */
 
 // Using "async" keyword to create the asynchronous function "apiTemperature"
 async function apiTemperature() {
@@ -30,48 +30,42 @@ try{
    5.- Using the "await" keyword to make a pause for the ".jason" method to deliver all the data before executing the next line conde.
    6.- Using ".json()" method to parse the response fetched from the API page as a javascript object or array.    */
         
-// For Tänään data.
-    const responseCurrent = await fetch("http://api.weatherunlocked.com/api/current/fi.65100?app_id=cb363626&app_key=5a70eb7b532cfced90229538b5e8fe8c");
-// For Huomenna data.
-    const responseForecast = await fetch("http://api.weatherunlocked.com/api/forecast/fi.65100?app_id=cb363626&app_key=5a70eb7b532cfced90229538b5e8fe8c");
+    	
+	const url =	"https://www.meteosource.com/api/v1/free/point?place_id=vaasa&sections=all&timezone=Europe%2FHelsinki&language=en&units=metric&key=3rl4svnm9oxpxxlgsdywtkqy6lec7dojyuu80ear";
+	
+    const response = await fetch(url);
 
-    if(!responseCurrent.ok){    // For Tännän data.
+    if(!response.ok){    
         throw new Error("Could not fetch resource");
     }
-    const dataCurrent = await responseCurrent.json();
- 
-    if(!responseForecast.ok){       // For Huomenna data.
-        throw new Error("Could not fetch resource");
-    }
-    const dataForecast = await responseForecast.json();
+    const data = await response.json();  
 
 // Using the ".innerText" property to update the chosen "p" elements text. This variables are receiving the data parsed by ".json" method.  
     // For Tänään data.
-    temperatureCurrent.innerText = "Lämpötila: " + dataCurrent.temp_c + "°C";   
-	windSpeedCurrent.innerText = "Tuulen Nopeus: " + dataCurrent.windspd_ms + "°C"; 
-	weatherDescriptionCurrent.innerText = "Sääkuvaus: " + dataCurrent.wx_desc; 
+    temperatureCurrent.innerText = "Lämpötila: " + data.current.temperature + "°C";   
+	windSpeedCurrent.innerText = "Tuulen Nopeus: " + data.current.wind.speed + "m/s"; 
+	weatherDescriptionCurrent.innerText = "Sääkuvaus: " + data.daily.data[0].all_day.weather; 
     // For Huomenna data.
-    maxTemperatureForecast.innerText = "Ylin Lämpötila: " + dataForecast.Days[1].temp_max_c + "°C";   
-    minTemperatureForecast.innerText = "Alin Lämpötila: " + dataForecast.Days[1].temp_min_c + "°C";   
-    windSpeedForecast.innerText = "Tuulen maksiminopeus: " + dataForecast.Days[1].windspd_max_ms + " m/s";    
+    maxTemperatureForecast.innerText = "Ylin Lämpötila: " + data.daily.data[1].all_day.temperature_max + "°C";   
+    minTemperatureForecast.innerText = "Alin Lämpötila: " + data.daily.data[1].all_day.temperature_min + "°C";   
+    windSpeedForecast.innerText = "Tuulen Nopeus: " + data.daily.data[1].all_day.wind.speed + " m/s";    
  
 // Showing in the console: Current data from APi web page.
     console.log("");
     console.log("Current Data from API:");
-    console.log(dataCurrent);
+    console.log(data);
 
-    console.log("Current Temperature: " + dataCurrent.temp_c + "°C");
-    console.log("Wind speed: " + dataCurrent.windspd_ms + " m/s");
-    console.log("Sää: " + dataCurrent.wx_desc);  
+    console.log("Current Temperature: " + data.current.temperature + "°C");
+    console.log("Wind speed: " + data.current.wind.speed + " m/s");
+    console.log("Sää: " + data.daily.data[0].all_day.weather);  
 
-// Showing in the console: Forecast data from APi web page.
+// Showing in the console: Tomorrow data from APi web page.
     console.log("");
-    console.log("Forecast Data from API:");
-    console.log(dataForecast);
+    console.log("Tomorrow Data from API:");
 
-    console.log("Temperature: " + dataForecast.Days[1].temp_max_c + "°C");
-    console.log("Temperature: " + dataForecast.Days[1].temp_min_c + "°C");
-    console.log("Wind speed: " + dataForecast.Days[1].windspd_max_ms + " m/s");
+    console.log("Max Temperature: " + data.daily.data[1].all_day.temperature_max + "°C");
+    console.log("Min Temperature: " + data.daily.data[1].all_day.temperature_min + "°C");
+    console.log("Wind speed: " + data.daily.data[1].all_day.wind.speed + " m/s");
     }
 /*  
 1.-Using "catch(error)" statement to define a block of code to be executed if an error occurs in the try block.
